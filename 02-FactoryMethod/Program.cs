@@ -5,7 +5,6 @@
 *   제공할 수 있다.
 */
 
-
 abstract class Creator
 {
     public abstract IProduct CreateProduct();
