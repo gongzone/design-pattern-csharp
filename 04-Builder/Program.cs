@@ -6,17 +6,17 @@
 
 interface IBuilder
 {
-    IBuilder BuildPartA();
-    IBuilder BuildPartB();
-    IBuilder BuildPartC();
-    Product getProduct();
+    IBuilder BuildPartA(string partA);
+    IBuilder BuildPartB(string partB);
+    IBuilder BuildPartC(string partC);
+    Product GetProduct();
 }
 
 class ConcreteBuilder : IBuilder
 {
-    private readonly string _partA;
-    private readonly string _partB; 
-    private readonly string _partC; 
+    private string _partA = string.Empty;
+    private string _partB = string.Empty;
+    private string _partC = string.Empty;
 
     public IBuilder BuildPartA(string partA)
     {
@@ -36,34 +36,22 @@ class ConcreteBuilder : IBuilder
         return this;
     }
 
-    public getProduct()
+    public Product GetProduct()
     {
         return new Product(_partA, _partB, _partC);
     }
 }
 
-class Product
+class Product(string partA, string partB, string? partC)
 {
-    public string PartA { get; set; }
-    public string PartB { get; set; }   
-    public string? PartC { get; set; }
-
-    public Product(string partA, string partB, string? partC)
-    {
-        PartA = partA;  
-        PartB = partB;
-        PartC = partC;  
-    }
+    public string PartA { get; set; } = partA;
+    public string PartB { get; set; } = partB;
+    public string? PartC { get; set; } = partC;
 }
 
-class Director
+class Director(IBuilder builder)
 {
-    private readonly IBuilder _builder;
-
-    public Director(IBuilder builder) 
-    {
-        _builder = builder;
-    }
+    private readonly IBuilder _builder = builder;
 
     public Product CreateProductWithAllParts()
     {
@@ -71,7 +59,7 @@ class Director
                 .BuildPartA("partA")
                 .BuildPartB("partB")
                 .BuildPartC("partC")
-                .getProduct();
+                .GetProduct();
     }
 
     public Product CreateProductWithAAndB()
@@ -79,7 +67,7 @@ class Director
         return _builder
                 .BuildPartA("partA")
                 .BuildPartB("partB")
-                .getProduct();
+                .GetProduct();
     }
 }
 

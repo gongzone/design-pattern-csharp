@@ -15,7 +15,7 @@ abstract class Creator
         var product = CreateProduct();
         var result = product.Operation();
 
-        Console.WriteLine(result);  
+        Console.WriteLine(result);
     }
 }
 
@@ -37,21 +37,21 @@ class ConcreteCreator2 : Creator
 
 public interface IProduct
 {
-    string operation();
+    string Operation();
 }
 
 class ConcreteProduct1 : IProduct
 {
-    public string operation()
+    public string Operation()
     {
-        return "ConcreteProduct1 Operation..."
+        return "ConcreteProduct1 Operation...";
     }
 }
 
 class ConcreteProduct2 : IProduct
 {
-    public string operation()
+    public string Operation()
     {
-        return "ConcreteProduct2 Operation..."
+        return "ConcreteProduct2 Operation...";
     }
 }

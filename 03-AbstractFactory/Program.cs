@@ -4,7 +4,7 @@
 * - 구체적으로 어떤 클래스의 인스턴스(Concrete Product)를 사용하는지 감출 수 있다.
 */
 
-public interface IAbstractFactory
+interface IAbstractFactory
 {
     IAbstractProductA CreateProductA();
     IAbstractProductB CreateProductB();
@@ -48,17 +48,17 @@ interface IAbstractProductB
 
 class ConcreteProductA1 : IAbstractProductA
 {
-    public string UsefulFunctionA() 
-    { 
-        return 'The result of the product A1.'
+    public string UsefulFunctionA()
+    {
+        return "The result of the product A1.";
     }
 }
 
-class ConcreteProductA2: IAbstractProductA
+class ConcreteProductA2 : IAbstractProductA
 {
     public string UsefulFunctionA()
     {
-        return 'The result of the product A2.'
+        return "The result of the product A2.";
     }
 }
 
@@ -66,15 +66,15 @@ class ConcreteProductB1 : IAbstractProductB
 {
     public string UsefulFunctionB()
     {
-        return 'The result of the product B1'
+        return "The result of the product B1";
     }
 }
 
 class ConcreteProductB2 : IAbstractProductB
 {
-    public String UsefulFunctionB() 
+    public string UsefulFunctionB()
     {
-        return 'The result of the product B2'
+        return "The result of the product B2";
     }
 }
 
