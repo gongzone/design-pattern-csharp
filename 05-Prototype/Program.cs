@@ -1,8 +1,25 @@
 /* 
-* FactoryMethod (생성 패턴)
-* - 구체적으로 어떤 인스턴스를 만들지는 서브 클래스가 정한다.
-* - 다양한 구현체(Product)가 있고, 그 중에서 특정한 구현체를 만들 수 있는 다양한 팩토리(Creator)를
-*   제공할 수 있다.
+* Prototype (생성 패턴)
+* - 기존 인스턴스를 복제하여 새로운 인스턴스를 만드는 방법
+* - 복제 기능을 갖추고 있는 기존 인스턴스를 프로토타입으로 사용해 새 인스턴스를 만들 수 있다.
+* - 인스턴스를 만들 때마다 많은 리소스를 요하는 경우 효과적이다.
 */
+
+
+public interface IPrototype<T>
+{
+    T Clone();
+}
+
+public class ConcretePrototype(int id, string name) : IPrototype<ConcretePrototype>
+{
+    public int Id { get; set; } = id;
+    public string Name { get; set; } = name;
+
+    public ConcretePrototype Clone() => (ConcretePrototype)this.MemberwiseClone(); // shallow copy임을 명심.
+}
+
+
+
 
 
