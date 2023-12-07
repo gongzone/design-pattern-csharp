@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "04-Builder\Build
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototype", "05-Prototype\Prototype.csproj", "{6741F5DE-C2DA-4A62-93C4-FD2C3A5B76AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "06-Adapter\Adapter.csproj", "{84B68815-8797-41AB-B367-7D82EA96833B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6741F5DE-C2DA-4A62-93C4-FD2C3A5B76AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6741F5DE-C2DA-4A62-93C4-FD2C3A5B76AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6741F5DE-C2DA-4A62-93C4-FD2C3A5B76AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84B68815-8797-41AB-B367-7D82EA96833B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84B68815-8797-41AB-B367-7D82EA96833B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84B68815-8797-41AB-B367-7D82EA96833B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84B68815-8797-41AB-B367-7D82EA96833B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
