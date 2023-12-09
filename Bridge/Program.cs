@@ -1,5 +1,44 @@
 ﻿/* 
 * Bridge (구조 패턴)
-* - 기존 코드를 클라이언트가 사용하는 인터페이스의 구현체로 바꿔주는 패턴
-* - 클라이언트가 사용하는 인터페이스를 따르지 않는 기존 코드를 재사용할 수 있게 해준다.
+* - 추상적인 것과 구체적인 것을 분리하여 연결하는 패턴
+* - 하나의 계층 구조일 때 보다 각기 나누었을 때 독립적인 계층 구조로 발전 시킬 수 있다.
 */
+
+class Abstraction(IImplementation implementation)
+{
+    protected IImplementation _implementation = implementation;
+
+    public virtual string Operation()
+    {
+        return $"Abstarcton: {_implementation.OperationImplementation()}";
+    }
+}
+
+class ExtendedAbstraction(IImplementation implementation) : Abstraction(implementation)
+{
+    public override string Operation()
+    {
+        return $"ExtendedAbstraction: {base._implementation.OperationImplementation()}";
+    }
+}
+
+public interface IImplementation
+{
+    string OperationImplementation();
+}
+
+class ConcreteImplementaionA : IImplementation
+{
+    public string OperationImplementation()
+    {
+        return "ConcreteImplementaionA";
+    }
+}
+
+class ConcreteImplementationB : IImplementation
+{
+    public string OperationImplementation()
+    {
+        return "ConcreteImplementationB";
+    }
+}
