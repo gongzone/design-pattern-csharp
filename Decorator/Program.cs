@@ -17,7 +17,6 @@ class ConcreteComponent : Component
     }
 }
 
-
 abstract class Decorator(Component component) : Component
 {
     protected Component _component = component;
