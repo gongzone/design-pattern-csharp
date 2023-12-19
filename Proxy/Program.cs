@@ -1,5 +1,43 @@
 ﻿/* 
-* Adapter (구조 패턴)
-* - 기존 코드를 클라이언트가 사용하는 인터페이스의 구현체로 바꿔주는 패턴
-* - 클라이언트가 사용하는 인터페이스를 따르지 않는 기존 코드를 재사용할 수 있게 해준다.
+* Proxy (구조 패턴)
+* - 특정 객체에 대한 접근을 제어하거나 기능을 추가할 수 있는 패턴.
+* - 초기화 지연, 접근 제어, 로깅, 캐싱 등 다양하게 응용해 사용 할 수 있다.
 */
+
+public interface ISubject
+{
+    void Request();
+}
+
+class RealSubject : ISubject
+{
+    public void Request()
+    {
+        Console.WriteLine("RealSubject: Handling Request.");
+    }
+}
+
+class Proxy(RealSubject realSubject) : ISubject
+{
+    private readonly RealSubject _realSubject = realSubject;
+
+    public void Request()
+    {
+        if (CheckAccess())
+        {
+            _realSubject.Request();
+            LogAccess();
+        }
+    }
+
+    public bool CheckAccess()
+    {
+        Console.WriteLine("Proxy: Checking access prior to firing a real request.");
+        return true;
+    }
+
+    public void LogAccess()
+    {
+        Console.WriteLine("Proxy: Logging the time of request.");
+    }
+}
